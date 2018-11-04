@@ -1,4 +1,4 @@
-var app = angular.module('NASAPhotoPicker', ['ngRoute']);
+var app = angular.module('NASAPhotoPicker', ['ngRoute', 'angularCSS']);
 
 app.config(function($routeProvider) {
     $routeProvider
@@ -12,7 +12,8 @@ app.config(function($routeProvider) {
         })
         .when('/blog', {
             templateUrl: 'blog-controller/blog-controller.html',
-            controller: 'blogController'
+            controller: 'blogController',
+            css: 'blog-controller/blog-controller.css'
         })
 		.otherwise({
 			redirectTo: '/photos',
