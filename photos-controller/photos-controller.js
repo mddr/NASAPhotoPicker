@@ -3,7 +3,7 @@ angular.module("NASAPhotoPicker")
         $scope.images = [];
 
         $scope.getApod = function() {
-            apiService.getApods(10)
+            apiService.getApods(12)
                 .then(response => {
                     $scope.images = response.data;
                     console.log($scope.images);

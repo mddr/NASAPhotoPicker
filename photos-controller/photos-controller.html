@@ -1,5 +1,8 @@
 <div class="container-fluid" ng-init="getApod()">
-    <div class="image-container" ng-repeat="image in images track by $index">
-        <img src={{image.url}} alt="nasa-photo" ng-if="image.media_type === 'image'">
+    <div class="images-container">
+        <div class="image" ng-repeat="image in images track by $index" ng-if="image.media_type === 'image'">
+            <img src={{image.url}} alt={{image.title}}>
+            <p>{{image.title}}</p>
+        </div>
     </div>
 </div>
