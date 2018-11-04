@@ -2,3 +2,7 @@
     background-color: cyan;
     width: 100vw;
 }
+
+body {
+    padding-top: 100px;
+}

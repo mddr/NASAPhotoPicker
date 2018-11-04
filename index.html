@@ -1,28 +1,46 @@
-<html>
-    <head>
-        <title>NASA Photo picker</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html ng-app="NASAPhotoPicker">
+<head>
+    <title>NASA Photo Picker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="reset.css" rel="stylesheet" type="text/css">
-        <link href="index.css" rel="stylesheet" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    </head>
-    <body>
-        <div ng-app="NASAPhotoPicker" ng-controller="PhotosController">
-            <div class="menu-container">
-                <ul class="menu">
-                    <li class="menu-item">
-                        <a href="index.html">Zdjęcia</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="blog.html">Blog</a>
-                    </li>
+    <link rel="stylesheet" href="reset.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="photos-controller/photos-controller.js"></script>
+    <script src="blog-controller/blog-controller.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">NASA Photo Picker</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ng-href="#!photos">Zdjęcia</a></li>
+                    <li><a ng-href="#!blog">Blog</a></li>
                 </ul>
             </div>
         </div>
+    </nav>
         
-        
-        <script src="controllers/photos-controller.js"></script>
-    </body>
+    <div id="main">
+        <div ng-view></div>
+    </div>
+    
+</body>
 </html>
