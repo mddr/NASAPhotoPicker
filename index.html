@@ -1,11 +1,27 @@
 <html>
     <head>
+        <title>NASA Photo picker</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="reset.css" rel="stylesheet" type="text/css">
+        <link href="index.css" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     </head>
     <body>
         <div ng-app="NASAPhotoPicker" ng-controller="PhotosController">
-            <p>{{ test }}</p>
+            <div class="menu-container">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="index.html">Zdjęcia</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="blog.html">Blog</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+        
         
         <script src="controllers/photos-controller.js"></script>
     </body>
