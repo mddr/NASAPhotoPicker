@@ -1,8 +1,5 @@
-.menu-container {
-    background-color: cyan;
-    width: 100vw;
-}
-
 body {
+    background: #383838;
+    color: #fff;
     padding-top: 100px;
 }
