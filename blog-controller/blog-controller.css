@@ -1,11 +1,17 @@
+.blog-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .content {
-    background-color: aqua;
-    padding-top: 20px;
+    background-color: #9e3232;
+    padding: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-bottom: 20px;
-    min-width: 440px;
+    width: 440px;
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
@@ -24,7 +30,12 @@
 .button-container {
     display: flex;
     align-self: flex-end;
+    margin: 5px;
 }
 .content-text {
     margin: 10px;
+}
+
+.button-content {
+    background-color: #0C0742;
 }
