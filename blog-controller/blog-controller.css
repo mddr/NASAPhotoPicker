@@ -5,18 +5,15 @@
 }
 
 .content {
-    background-color: #9e3232;
+    background-color: #414141;
     padding: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-bottom: 20px;
     width: 440px;
-    border-radius: 10px 10px 10px 10px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border: 0px solid #000000;
-
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
 .margin-class {
@@ -24,6 +21,7 @@
     margin-left: 10px;
 }
 .content > img {
+    max-height: 300px;
     max-width: 400px;
 }
 
@@ -32,10 +30,17 @@
     align-self: flex-end;
     margin: 5px;
 }
+
+.button-container > button {
+    border: 0;
+    padding: 5px;
+    margin: 5px;
+}
+
 .content-text {
     margin: 10px;
 }
 
 .button-content {
-    background-color: #0C0742;
+    color: #414141;
 }
