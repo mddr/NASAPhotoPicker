@@ -28,3 +28,12 @@
     font-size: 0.8em;
     text-align: right;
 }
+
+.apod-container {
+    color: black;
+}
+
+.apod img {
+    max-height: 600px;
+    max-width: 600px;
+}

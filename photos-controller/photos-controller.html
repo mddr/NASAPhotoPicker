@@ -1,7 +1,20 @@
 <div class="container-fluid" ng-init="getApod()">
-    <div class="images-container">
+    <div class="loading-container" ng-if="loading">
+        <img src="../assets/loading.gif" alt="Loading..." width="50px" height="50px"/>
+    </div>
+
+    <div class="apod-container" ng-if="displayApod && !loading">
+        <div class="apod">
+            <img src={{apod.url}} alt="Dzisiejsze Astronomiczne Zdjęcie Dnia"/>
+            <p class="title">{{apod.title}}</p>
+        </div>
+        <input type="number" ng-model="imagesCount" min="1" max="30">
+        <button type="submit" ng-click="getApods()" class="btn">Wyświetl</button>
+    </div>
+
+    <div class="images-container" ng-if="!displayApod">
         <div class="image" ng-repeat="image in images track by $index" ng-if="image.media_type === 'image'">
-            <img src={{image.url}} alt={{image.title}}>
+            <img src={{image.url}} alt={{image.title}}/>
             <p class="title">{{image.title}}</p>
         </div>
     </div>
