@@ -2,7 +2,7 @@
     <div class="images-container">
         <div class="image" ng-repeat="image in images track by $index" ng-if="image.media_type === 'image'">
             <img src={{image.url}} alt={{image.title}}>
-            <p>{{image.title}}</p>
+            <p class="title">{{image.title}}</p>
         </div>
     </div>
 </div>

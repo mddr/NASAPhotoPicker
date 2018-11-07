@@ -7,10 +7,24 @@
 .image {
     padding: 10px;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
-.image > img {
+.image:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.image img {
     max-height: 400px;
     max-width: 400px;
+}
+
+.image .title {
+    padding-top: 1em;
+    font-size: 0.8em;
+    text-align: right;
 }
