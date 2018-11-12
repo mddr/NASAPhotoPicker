@@ -1,11 +1,13 @@
 <div class="container-fluid">
     <div class="blog-container">
+
         <div class="post-container" ng-if="!getPosts().length">
             <div class="content">
                 <img src="https://placekitten.com/500/300" alt="" />
                 <p class="content-text">Brak postów!</p>
             </div>
         </div>
+
 
         <div class="post-container" ng-repeat="post in getPosts() track by $index" ng-if="getPosts().length">
             <div class="content">
