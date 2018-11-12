@@ -32,4 +32,10 @@ angular.module("NASAPhotoPicker")
                 this.formValid = false;
             }
         }
+
+        $scope.addPost = function() {
+            let post = {url:this.apod.url, text:"sample text"};
+            apiService.addPost(post);
+            console.log(apiService.posts);
+        }
     }]);
