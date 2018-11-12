@@ -6,7 +6,20 @@
             deleniti aspernatur aut. Rerum ab ut ex ut molestias. Enim eum eaque sed dolorem deserunt vel
             necessitatibus. Et aliquid rem praesentium velit saepe suscipit.</p>
         <div class="button-container">
-            <button class="button-content btn">Edytuj</button>
+            <button ng-click="openModal('custom-modal-1')" class="button-content btn">Edytuj</button>
+            <modal- id="custom-modal-1">
+                <div class="modal">
+                    <div class="modal-body">
+                        <h1>A Custom Modal!</h1>
+                        <p>
+                            Home page text: <input type="text" ng-model="vm.bodyText" />
+                        </p>
+                        <button ng-click="closeModal('custom-modal-1')">Close</button>
+                    </div>
+                </div>
+                <div class="modal-background"></div>
+            </modal->
+
             <button class="button-content btn">Usuń</button>
         </div>
     </div>
