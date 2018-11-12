@@ -1,6 +1,7 @@
 angular.module("NASAPhotoPicker")
     .controller("photosController", ["$scope", 'apiService', function($scope, apiService) {
         $scope.loading = true;
+        $scope.formValid = false;
         $scope.displayApod = true;
         $scope.apod;
         $scope.images = [];
@@ -23,4 +24,12 @@ angular.module("NASAPhotoPicker")
                     $scope.loading = false;
                 })
         };
+
+        $scope.validateInput = function() {
+            if (typeof this.imagesCount == 'number' && this.imagesCount > 0 && this.imagesCount <= 30) {
+                this.formValid = true;
+            } else {
+                this.formValid = false;
+            }
+        }
     }]);

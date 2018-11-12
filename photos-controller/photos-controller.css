@@ -5,17 +5,17 @@
 }
 
 .image {
-    padding: 10px;
+    background: #ffffff;
+    color: #000000;
     display: flex;
     flex-direction: column;
     cursor: pointer;
     margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
 }
 
-.image:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+.image:hover, .apod:hover {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
 .image img {
@@ -23,17 +23,65 @@
     max-width: 400px;
 }
 
-.image .title {
-    padding-top: 1em;
-    font-size: 0.8em;
-    text-align: right;
+.image-header {
+    justify-self: flex-start;
+    height: 40px;
+    background: #ffffff;
+    padding: 10px;
 }
 
 .apod-container {
-    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #000000;
+}
+
+.apod {
+    background: #ffffff;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
 }
 
 .apod img {
     max-height: 600px;
     max-width: 600px;
+}
+
+.number-input {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+}
+
+input.ng-invalid.ng-dirty {
+    box-shadow: inset 0px 0px 2px 0px rgba(247,8,8,1);
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 97vw;
+    height: 80vh;
+}
+
+.button-submit {
+    width: 160px;
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    background: #222222;
+    color: #fff;
+}
+
+.button-submit:hover {
+    color: #cacaca;
 }
