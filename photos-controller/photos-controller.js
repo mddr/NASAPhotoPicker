@@ -34,7 +34,7 @@ angular.module("NASAPhotoPicker")
         }
 
         $scope.addPost = function() {
-            let post = {url:this.apod.url, text:"sample text"};
+            let post = {url:this.apod.url, text:"sample text", media_type:"video"};
             apiService.addPost(post);
             console.log(apiService.posts);
         }
