@@ -18,6 +18,10 @@ angular.module("NASAPhotoPicker")
         this.addPost = function(post) {
             this.posts.push(post);
         }
+
+        this.updatePost = function(index, post) {
+            this.posts[index] = post;
+        }
         
         this.removePost = function(id) {
             this.posts.splice(id, 1);

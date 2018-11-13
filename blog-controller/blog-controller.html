@@ -13,10 +13,49 @@
                 <iframe src="{{post.url | trustThisUrl}}" alt="" ng-if="post.media_type === 'video'"></iframe>
                 <p class="content-text">{{post.text}}</p>
                 <div class="button-container">
-                    <button class="button-content btn" ng-click="editPost(post)">Edytuj</button>
-                    <button class="button-content btn" ng-click="removePost(index)">Usuń</button>
+                    <button class="button-content btn" data-toggle="modal" data-target="#editPostModal" data-image={{post}} ng-click="openModal(post, $index)">Edytuj</button>
+                    <button class="button-content btn" ng-click="removePost($index)">Usuń</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="editPostModal" tabindex="-1" role="dialog" aria-labelledby="editPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editPostModalLabel"></h5>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt={{image.title}}/>
+                <iframe id="modalIframe" src="" alt="{{image.url}}"></iframe>
+                
+                <textarea class="modal-textarea" placeholder="Treść wpisu" ng-model="postContent"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button-submit" data-dismiss="modal">Zamknij</button>
+                <button type="button" class="btn button-submit" data-dismiss="modal" ng-click="onModalClick()">Zapisz</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#editPostModal').on('show.bs.modal', function (event) {
+        let button = $(event.relatedTarget)
+        let image = button.data('image')
+        let modal = $(this)
+
+        modal.find('.modal-title').text('Edytuj post: ' + image.title);
+        if (image.media_type === 'image') {
+            $('#modalImage').css('display', 'block');
+            $('#modalImage').attr('src', image.url);
+            $('#modalIframe').css('display', 'none');
+        } else {
+            $('#modalIframe').css('display', 'block');
+            $('#modalIframe').attr('src', image.url);
+            $('#modalImage').css('display', 'none');
+        }
+    })
+</script>

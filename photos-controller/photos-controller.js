@@ -6,6 +6,8 @@ angular.module("NASAPhotoPicker")
         $scope.apod;
         $scope.images = [];
         $scope.imagesCount;
+        $scope.postContent;
+        $scope.modalImage;
 
         $scope.getApods = function() {
             $scope.displayApod = false;
@@ -33,9 +35,20 @@ angular.module("NASAPhotoPicker")
             }
         }
 
-        $scope.addPost = function() {
-            let post = {url:this.apod.url, text:"sample text", media_type:"video"};
+        $scope.onModalClick = function() {
+            let post = {
+                url:$scope.modalImage.url, 
+                text:$scope.postContent, 
+                media_type:$scope.modalImage.media_type,
+                title:$scope.modalImage.title
+            };
             apiService.addPost(post);
-            console.log(apiService.posts);
+            $scope.modalImage = null;
+            $scope.postContent = null;
         }
+
+        $scope.setModalImage = function(image) {
+            $scope.modalImage = image;
+        }
+
     }]);
