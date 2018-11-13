@@ -5,7 +5,7 @@ angular.module("NASAPhotoPicker")
         $scope.index;
 
         $scope.getPosts = function() {
-            return apiService.posts;
+            return apiService.posts.sort($scope.compareFunction);
         }
 
         $scope.removePost = function(index) {
@@ -26,6 +26,10 @@ angular.module("NASAPhotoPicker")
                 title: $scope.modalImage.title
             };
             apiService.updatePost($scope.index, post);
+        }
+
+        $scope.compareFunction = function(str1, str2) {
+            return str1 < str2 ? -1 : str1 > str2;
         }
 
     }]);

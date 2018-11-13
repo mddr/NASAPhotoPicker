@@ -9,6 +9,9 @@
 
         <div class="post-container" ng-repeat="post in getPosts() track by $index" ng-if="getPosts().length">
             <div class="content">
+                <div class="content-header">
+                    <p class="title">{{post.title}}</p>
+                </div>
                 <img src="{{post.url}}" alt="" ng-if="post.media_type === 'image'"/>
                 <iframe src="{{post.url | trustThisUrl}}" alt="" ng-if="post.media_type === 'video'"></iframe>
                 <p class="content-text">{{post.text}}</p>
@@ -31,7 +34,7 @@
                 <img id="modalImage" src="" alt={{image.title}}/>
                 <iframe id="modalIframe" src="" alt="{{image.url}}"></iframe>
                 
-                <textarea class="modal-textarea" placeholder="Treść wpisu" ng-model="postContent"></textarea>
+                <textarea placeholder="Treść wpisu" ng-model="postContent"></textarea>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn button-submit" data-dismiss="modal">Zamknij</button>
