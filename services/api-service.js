@@ -11,7 +11,7 @@ angular.module("NASAPhotoPicker")
         }
 
         this.getApod = function() {
-            const url = apodUrl.replace("{api_key}", apiKey).replace("&count={count}", "&date=");
+            const url = apodUrl.replace("{api_key}", apiKey).replace("&count={count}", "");
             return $http.get(url);
         }
 
