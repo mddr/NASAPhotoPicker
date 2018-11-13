@@ -4,7 +4,7 @@
     </div>
 
     <div class="apod-container" ng-if="displayApod && !loading">
-        <div class="apod">
+        <div class="apod" data-toggle="modal" data-target="#addPostModal" data-image={{apod}}>
             <div class="image-header">
                 <p class="title">{{apod.title}}</p>
             </div>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="images-container" ng-if="!displayApod">
-        <div class="image" ng-repeat="image in images track by $index" ng-if="image.media_type === 'image'">
+        <div class="image" ng-repeat="image in images track by $index" data-toggle="modal" data-target="#addPostModal" data-image={{image}}>
             <div class="image-header">
                 <p class="title">{{image.title}}</p>
             </div>
@@ -26,3 +26,33 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="addPostModal" tabindex="-1" role="dialog" aria-labelledby="addPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addPostModalLabel"></h5>
+            </div>
+            <div class="modal-body">
+                <img src={{image.url}} alt={{image.title}} ng-if="image.media_type === 'image'"/>
+                <iframe src="{{image.url | trustThisUrl}}" alt="Dzisiejsze Astronomiczne Zdjęcie Dnia" ng-if="image.media_type === 'video'" ng-style="{height: iframeHeight * 0.9 + 'px'}"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button-submit"  data-dismiss="modal">Zamknij</button>
+                <button type="button" class="btn button-submit">Dodaj</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#addPostModal').on('show.bs.modal', function (event) {
+        let button = $(event.relatedTarget) // Button that triggered the modal
+        let image = button.data('image') // Extract info from data-* attributes
+        console.log(image);
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        let modal = $(this)
+        modal.find('.modal-title').text('Dodaj nowy post: ' + image.title);
+    })
+</script>

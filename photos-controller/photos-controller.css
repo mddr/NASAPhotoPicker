@@ -85,3 +85,7 @@ input.ng-invalid.ng-dirty {
 .button-submit:hover {
     color: #cacaca;
 }
+
+.modal {
+    color: #000000;
+}
